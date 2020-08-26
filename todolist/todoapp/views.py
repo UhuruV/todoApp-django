@@ -12,6 +12,8 @@ def index(request):
             category = request.POST["category_select"]
             content = title + --+date + " " + category
             Todo = TodoList(title=title, content=content, due_date=date, category=Category.objects.get(name=category))
+
+            Todo.save()
             return redirect("/")
 
             
