@@ -9,7 +9,9 @@ class TodoListAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("name",)
     
-admin.site.register(TodoList)
-admin.site.register(Category)
+# admin.site.register(TodoList)
+# admin.site.register(Category)
+admin.site.register(models.TodoList, TodoListAdmin)
+admin.site.register(models.Category, CategoryAdmin)
 
 

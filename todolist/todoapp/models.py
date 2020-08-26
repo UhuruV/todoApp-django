@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
 
 # Create your models here.
 class Category(models.Model):
@@ -15,8 +15,8 @@ class Category(models.Model):
 class TodoList(models.Model):
     title = models.CharField(max_length=250)
     content = models.TextField(blank=True)
-    created = models.DateTimeField(default=timezone.now().strftime("%Y %m %d"))
-    due_date = models.DateTimeField(default=timezone.now().strftime("%Y %m %d"))
+    created = models.DateTimeField(auto_now_add=True)
+    due_date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, default='general', on_delete=models.CASCADE)
     objects = models.Manager()
     
